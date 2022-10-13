@@ -80,7 +80,6 @@ class HitCarder(object):
         return "%4d%02d%02d" % (today.year, today.month, today.day)
 
     def check_form(self):
-        return True
         """Get hitcard form, compare with old form """
         res = self.sess.get(self.base_url)
         html = res.content.decode()
@@ -95,7 +94,7 @@ class HitCarder(object):
                 return True
         #with open("form.txt", "w", encoding="utf-8") as f:
         #     f.write(new_form)
-        return True
+        return False
 
     def get_info(self, html=None):
         """Get hit card info, which is the old info with updated new time."""
