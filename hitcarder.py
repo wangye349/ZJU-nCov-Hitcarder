@@ -89,7 +89,7 @@ class HitCarder(object):
         except IndexError as _:
             raise RegexMatchError('Relative info not found in html with regex')
 
-        with open("form.txt", "r", encoding="gbk") as f:
+        with open("form.txt", "r", encoding="utf-8") as f:
             print(new_form)
             if new_form == f.read():
                 return True
